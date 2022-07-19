@@ -1,0 +1,326 @@
+// Start Variables
+$main-color: #127d8e;
+$second-color: #1fd7f4;
+$dark-color: #00394f;
+$main-transition: 0.5s;
+$section-padding: 70px;
+
+// Start mixins
+@mixin section-padding() {
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
+}
+
+@mixin before-icon($icon) {
+  font: var(--fa-font-solid);
+  content: $icon;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+// Start classes
+.main-link {
+  background-color: $main-color;
+  transition: $main-transition;
+  &:hover {
+    background-color: #0097ae;
+  }
+}
+
+.second-link {
+  background-color: $dark-color;
+  transition: $main-transition;
+  &:hover {
+    background-color: #001d29;
+  }
+}
+
+.main-heading {
+  span {
+    color: $main-color;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 60px;
+      height: 2px;
+      background-color: $main-color;
+      transform: translateY(-50%);
+    }
+    &::after {
+      left: 100%;
+    }
+    &::before {
+      right: 100%;
+    }
+  }
+  h2 {
+    color: $dark-color;
+  }
+}
+
+.separator {
+  padding-bottom: $section-padding;
+}
+
+// Start Global rules
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  // background-color: $main-color;
+  background-color: #333;
+  border-radius: 7px;
+}
+::-webkit-scrollbar-track {
+  background-color: #eee;
+  box-shadow: inset 0 0 5px grey;
+}
+
+// Start Sections
+.navbar {
+  .navbar-brand {
+    color: $main-color;
+  }
+  .collapse {
+    .navbar-nav {
+      .nav-link:hover,
+      .nav-link.active {
+        color: $main-color !important;
+      }
+    }
+  }
+}
+
+.landing {
+  @include section-padding();
+  background-color: $main-color;
+}
+
+.features {
+  @include section-padding();
+  .item {
+    cursor: pointer;
+    transition: $main-transition;
+    &:hover {
+      transform: scale(1.05);
+    }
+    svg {
+      color: $main-color;
+    }
+  }
+}
+
+.about-us {
+  @include section-padding();
+  .content {
+    .item {
+      height: calc(100% / 3);
+      &:last-of-type {
+        border-bottom: 1px solid #dee2e6;
+      }
+      &::before {
+        @include before-icon("\f00c");
+      }
+    }
+  }
+}
+
+.popular-classes {
+  @include section-padding();
+  .class {
+    h2 {
+      color: $dark-color;
+    }
+    .list {
+      width: 80%;
+      margin: auto;
+      .item {
+        span {
+          flex-basis: 50%;
+        }
+      }
+    }
+  }
+}
+
+.book-seat {
+  @include section-padding();
+  .heading {
+    span {
+      color: $main-color;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        width: 60px;
+        height: 2px;
+        margin-left: 10px;
+        background-color: #127d8e;
+        transform: translateY(-50%);
+      }
+    }
+    h2 {
+      color: $dark-color;
+    }
+  }
+  .content {
+    li::before {
+      @include before-icon("\f00c");
+      color: green;
+    }
+  }
+  form {
+    background-color: $main-color;
+    h2 {
+      background-color: $dark-color;
+    }
+  }
+}
+
+.our-teachers {
+  @include section-padding();
+  .item {
+    .image {
+      .overlay {
+        opacity: 0;
+        transition: $main-transition;
+        background: rgba($main-color, 0.6);
+        svg {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          transition: $main-transition;
+          &:hover {
+            background-color: #fff;
+            color: #000 !important;
+          }
+        }
+      }
+    }
+    &:hover {
+      .overlay {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.testimonial {
+  .swiper {
+    .swiper-slide {
+      p {
+        text-indent: 2rem;
+        &::before {
+          @include before-icon("\f10d");
+          top: 2rem;
+          left: -10px;
+          font-size: 2rem;
+          color: $main-color;
+        }
+      }
+      img {
+        width: 70px;
+      }
+      .name {
+        color: $dark-color;
+      }
+    }
+    .swiper-pagination {
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color: #000;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+      }
+      .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
+      }
+    }
+  }
+}
+
+.articles {
+  @include section-padding();
+  .pagination {
+    .page-item.active a {
+      background-color: $main-color;
+      border-color: $main-color;
+    }
+  }
+}
+
+footer {
+  .row {
+    @include section-padding();
+  }
+  background-color: $dark-color;
+  ul {
+    li {
+      svg {
+        width: 1rem !important;
+        height: 1rem !important;
+        transition: $main-transition;
+        &:hover {
+          background-color: $second-color;
+        }
+      }
+    }
+  }
+  .title {
+    color: $second-color;
+  }
+  .icon {
+    color: $second-color;
+  }
+  .links {
+    a {
+      transition: $main-transition;
+      &:hover {
+        color: $second-color !important;
+        margin-left: 10px;
+      }
+      &::after {
+        @include before-icon("\f105");
+      }
+    }
+  }
+  form {
+    input[type="submit"] {
+      background-color: $main-color;
+      transition: $main-transition;
+      &:hover {
+        background-color: $second-color;
+      }
+    }
+  }
+  .copy-right {
+    padding-top: $section-padding / 2;
+    padding-bottom: $section-padding / 2;
+    span {
+      color: $second-color;
+    }
+  }
+}
+
+.breadcrumb-section {
+  background-color: $main-color;
+  height: 50vh;
+  .breadcrumb-item::before {
+    color: #fff;
+  }
+}
