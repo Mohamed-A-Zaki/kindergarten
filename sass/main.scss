@@ -53,6 +53,13 @@
 
 .about-us {
   @include section-padding();
+  .main-heading {
+    span {
+      &::before {
+        display: none;
+      }
+    }
+  }
   .content {
     .item {
       height: calc(100% / 3);
