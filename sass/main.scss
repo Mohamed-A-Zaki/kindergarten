@@ -1,91 +1,23 @@
 // Start Variables
-$main-color: #127d8e;
-$second-color: #1fd7f4;
-$dark-color: #00394f;
-$main-transition: 0.5s;
-$section-padding: 70px;
+@import "./variables";
 
 // Start mixins
-@mixin section-padding() {
-  padding-top: $section-padding;
-  padding-bottom: $section-padding;
-}
-
-@mixin before-icon($icon) {
-  font: var(--fa-font-solid);
-  content: $icon;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  font-size: 20px;
-}
+@import "./mixins";
 
 // Start classes
-.main-link {
-  background-color: $main-color;
-  transition: $main-transition;
-  &:hover {
-    background-color: #0097ae;
-  }
-}
+@import "./classes";
 
-.second-link {
-  background-color: $dark-color;
-  transition: $main-transition;
-  &:hover {
-    background-color: #001d29;
-  }
-}
-
-.main-heading {
-  span {
-    color: $main-color;
-    &::after,
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      width: 60px;
-      height: 2px;
-      background-color: $main-color;
-      transform: translateY(-50%);
-    }
-    &::after {
-      left: 100%;
-    }
-    &::before {
-      right: 100%;
-    }
-  }
-  h2 {
-    color: $dark-color;
-  }
-}
-
-.separator {
-  padding-bottom: $section-padding;
-}
+// start components
+@import "./components";
 
 // Start Global rules
-body {
-  font-family: "Nunito", sans-serif;
-}
+@import "./global_rules";
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-thumb {
-  // background-color: $main-color;
-  background-color: #333;
-  border-radius: 7px;
-}
-::-webkit-scrollbar-track {
-  background-color: #eee;
-  box-shadow: inset 0 0 5px grey;
-}
+// start animations
+@import "./animations";
 
 // Start Sections
+
 .navbar {
   .navbar-brand {
     color: $main-color;
@@ -314,6 +246,58 @@ footer {
     span {
       color: $second-color;
     }
+  }
+}
+
+.gallery {
+  @include section-padding();
+  .btn-group {
+    .btn {
+      border-color: $main-color;
+      color: $main-color;
+      &:hover {
+        background-color: $main-color;
+        color: #fff;
+      }
+    }
+    input:checked + .btn {
+      background-color: $main-color;
+      color: #fff;
+    }
+  }
+  .item {
+    .overlay {
+      width: 70%;
+      height: 70%;
+      background-color: $main-color;
+      cursor: pointer;
+      opacity: 0;
+      transition: $main-transition;
+    }
+    &:hover {
+      .overlay {
+        opacity: 0.8;
+      }
+    }
+    &.hide {
+      display: none;
+    }
+    &.show {
+      display: block;
+      animation: show_item 1s;
+    }
+  }
+}
+
+.contact-us {
+  @include section-padding();
+  textarea {
+    height: 200px;
+  }
+  svg {
+    background-color: $main-color;
+    width: 20px;
+    height: 20px;
   }
 }
 

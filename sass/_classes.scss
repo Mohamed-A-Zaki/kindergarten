@@ -1,0 +1,19 @@
+.main-link {
+  background-color: $main-color;
+  transition: $main-transition;
+  &:hover {
+    background-color: #0097ae;
+  }
+}
+
+.second-link {
+  background-color: $dark-color;
+  transition: $main-transition;
+  &:hover {
+    background-color: #001d29;
+  }
+}
+
+.separator {
+  padding-bottom: $section-padding;
+}

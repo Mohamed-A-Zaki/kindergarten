@@ -130,6 +130,194 @@
     </nav>
     <!-- End Beradcrumb -->
 
+    <div class="gallery">
+      <div class="container">
+        <!-- strat main heading -->
+        <div class="main-heading text-center">
+          <span class="text-uppercase position-relative d-inline-block px-2"
+            >Our Gallery</span
+          >
+          <h2 class="fw-bold my-3">Our Kids School Gallery</h2>
+        </div>
+        <!-- end main heading -->
+
+        <!-- start button group -->
+        <div
+          class="btn-group d-block text-center my-4"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio1"
+            autocomplete="off"
+            checked
+          />
+          <label class="btn shadow-none rounded-pill mx-1" for="btnradio1"
+            >All</label
+          >
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio2"
+            autocomplete="off"
+          />
+          <label class="btn shadow-none rounded-pill mx-1" for="btnradio2"
+            >Playing</label
+          >
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio3"
+            autocomplete="off"
+          />
+          <label class="btn shadow-none rounded-pill mx-1" for="btnradio3"
+            >Drawing</label
+          >
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio4"
+            autocomplete="off"
+          />
+          <label class="btn shadow-none rounded-pill mx-1" for="btnradio4"
+            >Reading</label
+          >
+        </div>
+        <!-- end button group -->
+
+        <!-- start gallery images -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+          <div
+            class="item position-relative p-3 all playing"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <div class="image">
+              <img src="img/portfolio-1.jpg" class="img-fluid" alt="img" />
+            </div>
+            <div
+              class="overlay position-absolute top-50 start-50 translate-middle text-white display-1 d-flex justify-content-center align-items-center"
+            >
+              +
+            </div>
+          </div>
+
+          <div
+            class="item position-relative p-3 all drawing"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <div class="image">
+              <img src="img/portfolio-2.jpg" class="img-fluid" alt="img" />
+            </div>
+            <div
+              class="overlay position-absolute top-50 start-50 translate-middle text-white display-1 d-flex justify-content-center align-items-center"
+            >
+              +
+            </div>
+          </div>
+
+          <div
+            class="item position-relative p-3 all reading"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <div class="image">
+              <img src="img/portfolio-3.jpg" class="img-fluid" alt="img" />
+            </div>
+            <div
+              class="overlay position-absolute top-50 start-50 translate-middle text-white display-1 d-flex justify-content-center align-items-center"
+            >
+              +
+            </div>
+          </div>
+
+          <div
+            class="item position-relative p-3 all playing"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <div class="image">
+              <img src="img/portfolio-4.jpg" class="img-fluid" alt="img" />
+            </div>
+            <div
+              class="overlay position-absolute top-50 start-50 translate-middle text-white display-1 d-flex justify-content-center align-items-center"
+            >
+              +
+            </div>
+          </div>
+
+          <div
+            class="item position-relative p-3 all drawing"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <div class="image">
+              <img src="img/portfolio-4.jpg" class="img-fluid" alt="img" />
+            </div>
+            <div
+              class="overlay position-absolute top-50 start-50 translate-middle text-white display-1 d-flex justify-content-center align-items-center"
+            >
+              +
+            </div>
+          </div>
+
+          <div
+            class="item position-relative p-3 all reading"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <div class="image">
+              <img src="img/portfolio-6.jpg" class="img-fluid" alt="img" />
+            </div>
+            <div
+              class="overlay position-absolute top-50 start-50 translate-middle text-white display-1 d-flex justify-content-center align-items-center"
+            >
+              +
+            </div>
+          </div>
+        </div>
+        <!-- end gallery images -->
+      </div>
+    </div>
+
+    <!-- start modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- add image src by js -->
+            <img src="" alt="img" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end modal -->
+
     <!-- Start Footer -->
     <footer>
       <div class="container text-white">
