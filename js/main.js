@@ -1,3 +1,7 @@
+AOS.init({
+  duration: 1500,
+});
+
 const swiper = new Swiper(".swiper", {
   spaceBetween: 30,
   grabCursor: true,
