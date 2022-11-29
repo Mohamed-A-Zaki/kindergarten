@@ -50,13 +50,13 @@
 
 .about-us {
   @include section-padding();
-  .main-heading {
-    span {
-      &::before {
-        display: none;
-      }
-    }
-  }
+  // .main-heading {
+  //   span {
+  //     &::before {
+  //       display: none;
+  //     }
+  //   }
+  // }
   .content {
     .item {
       height: calc(100% / 3);
@@ -82,6 +82,9 @@
       .item {
         span {
           flex-basis: 50%;
+          &:first-child {
+            border-inline-end: 1px solid #ddd;
+          }
         }
       }
     }
@@ -90,25 +93,6 @@
 
 .book-seat {
   @include section-padding();
-  .heading {
-    span {
-      color: $main-color;
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        width: 60px;
-        height: 2px;
-        margin-left: 10px;
-        background-color: #127d8e;
-        transform: translateY(-50%);
-      }
-    }
-    h2 {
-      color: $dark-color;
-    }
-  }
   .content {
     li::before {
       @include before-icon("\f00c");
@@ -159,7 +143,7 @@
         &::before {
           @include before-icon("\f10d");
           top: 2rem;
-          left: -10px;
+          inset-inline-start: -10px;
           font-size: 2rem;
           color: $main-color;
         }
@@ -194,7 +178,7 @@
   @include section-padding();
   .pagination {
     .page-item.active a {
-      background-color: $main-color;
+      background-color: $main-color !important;
       border-color: $main-color;
     }
   }
@@ -228,10 +212,13 @@ footer {
       transition: $main-transition;
       &:hover {
         color: $second-color !important;
-        margin-left: 10px;
+        margin-inline-start: 10px;
       }
       &::after {
         @include before-icon("\f105");
+        [dir="rtl"] & {
+          content: "\f104";
+        }
       }
     }
   }
@@ -245,8 +232,7 @@ footer {
     }
   }
   .copy-right {
-    padding-top: $section-padding / 2;
-    padding-bottom: $section-padding / 2;
+    padding-block: $section-padding / 2;
     span {
       color: $second-color;
     }
@@ -291,6 +277,11 @@ footer {
       animation: show_item 1s;
     }
   }
+  .modal {
+    .btn-close {
+      margin-inline-start: auto;
+    }
+  }
 }
 
 .contact-us {
@@ -308,7 +299,18 @@ footer {
 .breadcrumb-section {
   background-color: $main-color;
   height: 50vh;
-  .breadcrumb-item::before {
-    color: #fff;
+  .breadcrumb-item {
+    + .breadcrumb-item {
+      padding: 0;
+      padding-inline-start: 0.5rem;
+    }
+    &::before {
+      color: #fff;
+      padding: 0;
+      padding-inline-end: 0.5rem;
+      [dir="rtl"] & {
+        float: right;
+      }
+    }
   }
 }
